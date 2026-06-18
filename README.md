@@ -4,7 +4,7 @@ Version 1.2
 
 # PURPOSE
 
-This bash script is designed to simplify the creation of compatible LUKS containers via cryptsetup. Setting up encrypted images was always a cumbersome process with a lot of typing, so this scripts aims to make it easier for the user especially in terminal-only environments. Only LUKS file containers / images are created by this script. Block devices (partitions) are NOT supported. Script works with multiple LUKS file containers.
+This bash script is designed to simplify the creation of compatible LUKS containers via cryptsetup. Setting up encrypted images was always a cumbersome process with lots of typing, so this scripts aims to make it easier for the user especially in terminal-only environments. Only LUKS file containers / images are created by this script. Block devices (partitions) are NOT supported. Script works with multiple LUKS file containers.
 
 # SYSTEM REQUIREMENTS
 
