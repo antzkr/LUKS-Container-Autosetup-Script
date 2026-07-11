@@ -1,12 +1,12 @@
-# LUKS Container Autosetup Script
+# LUKS Container Management Script
 
-Version 1.2
+Version 4.1
 
 # PURPOSE
 
-This bash script is designed to simplify the creation of compatible LUKS containers via cryptsetup. Setting up encrypted images was always a cumbersome process with lots of typing, so this scripts aims to make it easier for the user especially in terminal-only environments.
+This bash script is designed to simplify the creation of and management of compatible LUKS containers via cryptsetup. Setting up encrypted images was always a cumbersome process with lots of typing, so this scripts aims to make it easier for the user especially in terminal-only environments. There are many github scripts available for LUKS encrypted partitions but hardly any for encrypted images, hence this script was created.
 
-Why use LUKS? Because it's a known, reliable, secure encryption standard with strong defaults. No need to worry about selecting 'The Best™️' encryption settings. Just create and forget about it. Of course, the single most important security factor is the strength of the password so USE A STRONG PASSWORD!
+So why use LUKS, when other well-supported file encryption software is available (like gpg, veracrypt)? Because it's a known, reliable, flexible, secure encryption standard with strong defaults. No need to worry about selecting 'The Best™️' encryption settings. Just create and forget about it. Plus multiple keys (and keyfiles) can be used. Of course, the single most important security factor is the strength of the password so USE A STRONG PASSWORD!
 
 Only LUKS file containers / images are created by this script. Block devices (partitions) are NOT supported. Script works with multiple LUKS file containers.
 
@@ -18,11 +18,16 @@ The only requirements are systems with hardware to support modern encryption and
 
 Make executable and run:
 
-    chmod +x /luks-container-autosetup-script-v1.x.sh
-    ./luks-container-autosetup-script-v1.x.sh
+    chmod +x /luks-container-management-script-v4.x.sh
+    ./luks-container-management-script-v4.x.sh
 
+# IMPORTANT INFORMATION
 
-Note: DD is used to create the initial binary image. DD builds with base-10 numbers. Final container size will be smaller when measured in GB. So creating a 1000 MB container will actually result in a final size of 0.97 GB (eg. 1 GB = 1024 MB). Take this into consideration when creating the image size.
+Binary images uses base-10 numbers. Final container size will be smaller when measured in GB. So creating a 1000 MB container will actually result in a final size of 0.97 GB (eg. 1 GB = 1024 MB). Take this into consideration when creating the target image size.
+
+Resizing LUKS containers is inherently risky. Especially when truncating. ALWAYS create a backup before proceeding with any changes! A guide for shrinking to minimum sizes is provided, with conservative, moderate and risky size options displayed. Please remember that they are only a guide and data corruption is likely when containers are truncated below the filesystem and close to the underlying existing data. And don't forget that filesystem fragmentation may require more space.
+
+Keyfiles can be used in addition to or as a replacement of existing keys in the container. Remember that they act just like physical keys so be extra careful about storing them in the most secure way possible. Highly recommended to keep keyfiles completely offline (eg. deattached usb drive) and ideally create LUKS containers on a system running a LiveCD/USB OS.
 
 
 # LUKS Default Parameters:
