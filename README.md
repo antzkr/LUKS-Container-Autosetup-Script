@@ -27,7 +27,7 @@ Make executable and run:
 
 # IMPORTANT INFORMATION
 
-1. Binary images uses base-10 numbers. Final container size will be smaller when measured in GB. So creating a 1000 MB container will actually result in a final size of 0.97 GB (eg. 1 GB = 1024 MB). Take this into consideration when creating the target image size.
+1. Binary images use base-10 numbers. Final container size will be smaller when measured in GB. So creating a 1000 MB container will actually result in a final size of 0.97 GB (eg. 1 GB = 1024 MB). Take this into consideration when creating the target image size.
 
 2. Resizing LUKS containers is inherently risky. Especially when truncating.
 
