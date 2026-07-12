@@ -12,7 +12,7 @@ So why use LUKS, when other well-supported file encryption software is available
 
 Of course, the single most important security factor is the strength of the password so USE A STRONG PASSWORD!
 
-Only LUKS file containers / images are created by this script. Block devices (partitions) are **NOT supported**. This script works with multiple LUKS file containers.
+Only LUKS file containers / images are created. Block devices (partitions) are **NOT supported**. This script works with multiple LUKS file containers.
 
 # SYSTEM REQUIREMENTS
 
