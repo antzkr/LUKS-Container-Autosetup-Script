@@ -35,11 +35,11 @@ Make executable and run:
 
    When shrinking a minimum size guide offers conservative, moderate and risky size suggestions. Please remember that they are only a guide and data corruption is likely when containers are truncated below the filesystem and close to the underlying existing data. And don't forget that filesystem fragmentation may require more space.
 
-5. Keyfiles can be used in addition to (or as a replacement of) existing keys in the container. Remember that they act just like physical keys so be extra careful about storing them in a secure way. It is highly recommended to keep keyfiles completely offline (eg. deattached usb drive) and ideally create LUKS containers on a system running on a LiveCD/USB OS.
+5. Keyfiles can be used in addition to (or as a replacement of) existing keys in the container. Since they act just like physical keys you need to be extra careful about storing them in a secure way. It is highly recommended to keep keyfiles completely offline (eg. a detached usb drive) and also create LUKS containers on a LiveCD/USB OS (RAM-only filesystem) for memory security.
 
 
 # LUKS Default Parameters:
-
+These default settings are completely fine for most users. As already mentioned, password strength is the most important security factor.
 - Cipher: aes-xts-plain64
 - Key Size: 512 bits
 - Header Hashing: sha256
