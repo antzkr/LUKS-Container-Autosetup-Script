@@ -23,7 +23,7 @@ The only requirements are systems with hardware to support modern encryption and
 Make executable and run:
 
     chmod +x /luks-container-management-script-v4.x.sh
-    ./luks-container-management-script-v4.x.sh
+    sudo ./luks-container-management-script-v4.x.sh
 
 # IMPORTANT INFORMATION
 
