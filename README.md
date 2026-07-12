@@ -6,7 +6,7 @@ Version 4.1
 
 This bash script is designed to simplify the creation and management of compatible LUKS containers via cryptsetup.
 
-Setting up encrypted images was always a cumbersome process with lots of typing so this scripts aims to make LUKS management easier, especially in cli environments. There are many github scripts available for LUKS encrypted partitions but hardly any for encrypted images, hence this script was created for this very scenario.
+Setting up encrypted images was always a cumbersome process with lots of typing so this scripts aims to make LUKS management easier, especially in cli environments. There are many github scripts available for LUKS encrypted partitions but hardly any for encrypted LUKS images, hence the reason for writing this script.
 
 So why use LUKS, when other well-supported file encryption software is available (like gpg or veracrypt)? Because it's a known, reliable, flexible, secure encryption standard with strong defaults. No need to worry about selecting 'The Best™️' encryption settings. Just create and forget about it. Plus multiple keys (and keyfiles) can be used.
 
@@ -33,7 +33,7 @@ Make executable and run:
 
    **ALWAYS create a backup before proceeding with any changes!**
 
-   When shrinking, a minimum size guide offers conservative, moderate and aggressive size suggestions. Please remember that these sizes are only approximations thus data corruption is likely when containers are truncated below the filesystem and close to the underlying existing data. And don't forget that filesystem fragmentation may require more space.
+   When shrinking, a minimum size guide offers conservative, moderate and aggressive size suggestions. Please remember that these sizes are only approximations - data corruption is likely when containers are truncated below the filesystem and close to the underlying existing data. And don't forget that filesystem fragmentation may require more space.
 
 5. Keyfiles can be used in addition to (or as a replacement of) existing keys in the container. Since they act just like physical keys you need to be extra careful about storing them in a secure way. It is highly recommended to keep keyfiles completely offline (eg. a detached usb drive) and also create LUKS containers on a LiveCD/USB OS (RAM-only) for memory security.
 
